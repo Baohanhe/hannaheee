@@ -1,167 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Hannah's personal journal about engineering, research, mountains and little things." />
-<title>HANNAH! — Materials, Machines & Mountains</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#073953">
+<meta name="description" content="HANNAH! — the personal web magazine of Hannah He. Materials science, thermal engineering, California, hiking, and other curiosities.">
+<title>HANNAH! — An Engineer's Guide to Everything Else</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#073b59;--cream:#fff9e8;--yellow:#f3c64d;--red:#cf5d46;--green:#426452;--ink:#17333b;--line:#cbd1c5;--paper:#f5ead5}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 'DM Sans',Arial,sans-serif}
-a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
-img{max-width:100%;display:block}button{font:inherit}
-.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-.topbar{background:var(--navy);color:var(--cream);border-bottom:1px solid #648093;position:sticky;top:0;z-index:10}
-.topinner{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font:700 25px/1 'Fredoka',sans-serif;letter-spacing:-1px}
-.nav{display:flex;flex-wrap:wrap;gap:20px;font-size:12px;font-weight:800;letter-spacing:.12em}.nav a:hover{color:var(--yellow)}
-.hero{background:var(--navy);color:var(--cream);overflow:hidden}
-.hero .wrap{padding:28px 0 55px}
-.issue{display:flex;justify-content:space-between;gap:20px;font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-.masthead{font-family:'Fredoka',Arial,sans-serif;font-weight:700;font-size:clamp(80px,17vw,225px);line-height:.9;letter-spacing:-.075em;text-align:center;margin:28px 0 12px;white-space:nowrap;padding-right:.07em}
-.strap{text-align:center;font-weight:700;letter-spacing:.04em;font-size:clamp(14px,2vw,21px);margin:0 auto 32px}
-.hero-board{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:start;min-height:500px}
-.cutout{background:var(--paper);padding:9px;color:var(--ink);box-shadow:8px 9px 0 #042d45;transition:transform .2s;min-width:0}
-.cutout:hover{transform:translateY(-6px) rotate(0deg)}
-.cutout img{height:245px;width:100%;object-fit:cover;background:#d7d9ce}
-.cutout b{display:block;font-size:12px;line-height:1.15;margin-top:9px;text-transform:uppercase;letter-spacing:.09em}
-.cutout span{display:block;font-size:11px}
-.c1{grid-column:1/span 4;transform:rotate(-5deg);margin-top:35px}
-.c2{grid-column:5/span 4;transform:rotate(3deg);margin-top:2px}
-.c3{grid-column:9/span 4;transform:rotate(-3deg);margin-top:45px}
-.scribble{font:600 18px 'Fredoka',sans-serif;color:var(--yellow);position:absolute;right:5%;bottom:35px;transform:rotate(-10deg)}
-.hero-bottom{display:flex;justify-content:space-between;align-items:end;gap:20px;border-top:1px dashed #aabcc4;padding-top:20px}.hero-bottom p{max-width:550px;margin:0;font-weight:600}.stamp{color:var(--yellow);font:700 17px 'Fredoka',sans-serif;transform:rotate(-7deg)}
-.section{padding:80px 0}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}.section-title{font:700 clamp(42px,7vw,84px)/1 'Fredoka',sans-serif;letter-spacing:-.04em;margin:8px 0 25px}
-.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}.lead{font-size:clamp(19px,2.3vw,27px);line-height:1.5}
-.about-card{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
-.polaroid{background:#fffdf6;border:2px solid var(--ink);padding:10px;box-shadow:8px 8px 0 var(--yellow);transform:rotate(-2deg)}
-.polaroid img{width:100%;height:360px;object-fit:cover}
-.polaroid small{display:block;margin-top:8px;font-weight:800;letter-spacing:.08em;color:var(--red)}
-.note{border:2px solid var(--ink);background:#f5edce;transform:rotate(2deg);padding:25px;box-shadow:7px 7px 0 var(--yellow)}.note h3{font:700 25px 'Fredoka',sans-serif;margin:0 0 12px}.note p{margin:0 0 10px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid currentColor;padding:4px 10px;border-radius:100px;font-size:12px;font-weight:700}
-.stripe{height:12px;background:repeating-linear-gradient(90deg,var(--yellow) 0 40px,var(--red) 40px 80px,var(--navy) 80px 120px,var(--green) 120px 160px)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.feature{border:2px solid var(--ink);background:#fffdf5;transition:transform .2s}.feature:hover{transform:translateY(-5px)}.feature img{width:100%;height:215px;object-fit:cover}.feature-content{padding:20px}.feature small{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--red)}.feature h3{font:700 27px/1.05 'Fredoka',sans-serif;margin:9px 0}.feature p{font-size:14px;margin:0 0 15px}.read{font-size:12px;font-weight:800;letter-spacing:.08em;border-bottom:2px solid var(--yellow)}.panel{background:#e9eee5}
-.journal-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.journal-card{background:#fffdf6;border:2px solid var(--ink);padding:12px;box-shadow:7px 7px 0 var(--green)}.journal-card:nth-child(2){transform:rotate(1deg)}.journal-card img{width:100%;height:260px;object-fit:cover}.journal-card h3{font:700 30px 'Fredoka',sans-serif;line-height:1.12;margin:14px 0 5px}.journal-card p{font-size:14px;margin:0 0 8px}.tag{display:inline-block;background:var(--yellow);font-size:11px;font-weight:800;padding:4px 9px;margin-top:12px}
-.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.gallery-strip img{border:2px solid var(--ink);height:165px;width:100%;object-fit:cover;background:#fff}
-.contact{background:var(--yellow);padding:65px 0}.contact .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px}.contact h2{font:700 clamp(45px,8vw,90px)/1 'Fredoka',sans-serif;letter-spacing:-.04em;margin:5px 0}.contact p{max-width:510px}.links{display:flex;gap:9px;flex-wrap:wrap}.links a{border:2px solid var(--ink);padding:11px 16px;font-size:13px;font-weight:800;background:var(--cream)}
-footer{background:var(--navy);color:var(--cream);padding:23px 0;font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:20px}
-.placeholder-note{font-size:12px;color:#516b72;margin-top:12px}.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:100;background:white;padding:10px}
-@media(max-width:900px){.intro,.about-card,.journal-grid{grid-template-columns:1fr}.gallery-strip{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:750px){.topinner{padding:15px 0;align-items:flex-start;flex-direction:column}.nav{gap:12px;font-size:11px}.hero .wrap{padding-bottom:35px}.masthead{font-size:clamp(60px,17vw,128px)}.hero-board{gap:10px;min-height:0}.c1{grid-column:1/span 6;margin-top:12px}.c2{grid-column:7/span 6;margin-top:35px}.c3{grid-column:3/span 8;margin:15px 0 55px}.cutout img{height:170px}.scribble{bottom:5px;right:2%}.grid{grid-template-columns:1fr}.feature img{height:230px}.section{padding:60px 0}.contact .wrap,.hero-bottom{align-items:start;flex-direction:column}.issue{font-size:9px}.journal-card:nth-child(2){transform:none}.gallery-strip{grid-template-columns:1fr 1fr}.polaroid img{height:300px}}
-@media(max-width:410px){.wrap{width:calc(100% - 28px)}.masthead{font-size:16.8vw}.cutout img{height:120px}.cutout{padding:6px}.cutout b{font-size:10px}.cutout span{font-size:9px}.nav{gap:9px}.section-title{font-size:43px}.gallery-strip{grid-template-columns:1fr}}
+:root{--blue:#073953;--blue2:#0d4760;--paper:#fff9e9;--off:#f4f0e5;--ink:#183340;--yellow:#f5cf55;--red:#d9674b;--green:#4c755f;--pale:#e4e9df;--border:#c8c5b6}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+button,a{font:inherit}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:auto}a:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrapper{width:min(1180px,calc(100% - 56px));margin:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-100vw;top:0;padding:10px 15px;background:#fff;z-index:100}.skip:focus{left:10px}
+header{background:var(--paper);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:50}
+.top{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:66px}
+.logo{font:700 28px/.95 Fredoka,sans-serif;letter-spacing:-.065em;white-space:nowrap}.logo span{color:var(--red)}
+nav{display:flex;align-items:center;gap:clamp(10px,2.3vw,31px)}nav a{font-size:11px;font-weight:800;letter-spacing:.09em;white-space:nowrap;border-bottom:2px solid transparent}nav a:hover{border-color:var(--red)}
+.nav-ed{font:600 14px Caveat,cursive;white-space:nowrap;color:var(--red)}
+.cover{background:var(--blue);color:var(--paper);overflow:hidden;position:relative}
+.cover::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff 0.45px, transparent 0.45px);background-size:11px 11px}
+.cover-inner{position:relative;padding-top:26px;padding-bottom:32px}
+.meta{display:flex;justify-content:space-between;gap:14px;text-transform:uppercase;font-size:11px;letter-spacing:.14em;font-weight:800;align-items:center}
+.meta .edition{border:1px solid #7794a2;padding:4px 12px;border-radius:30px}
+.mast{position:relative;line-height:.83;margin:24px -8px 8px;text-align:center;z-index:2}
+.mast h1{margin:0;font:700 clamp(90px,17.4vw,217px)/.87 Fredoka,Arial,sans-serif;letter-spacing:-.092em;text-shadow:3px 4px 0 #104b66;white-space:nowrap;padding-right:.08em}
+.mast .registered{font:800 12px 'DM Sans',sans-serif;vertical-align:top;letter-spacing:0}
+.cover-deck{text-align:center;max-width:560px;margin:0 auto;font-size:clamp(13px,1.5vw,18px);font-weight:600;line-height:1.35;letter-spacing:.02em}
+.cover-deck strong{color:var(--yellow)}
+.cutout-stage{position:relative;min-height:680px;margin-top:15px}
+.photo{background:#fdfbf1;color:var(--ink);border:6px solid #fdfbf1;padding:0 0 6px;box-shadow:6px 9px 0 rgba(2,25,37,.45);position:absolute;transition:transform .22s ease;z-index:1}
+.photo:hover{z-index:8;transform:rotate(0) translateY(-8px)}
+.photo img{object-fit:cover;aspect-ratio:var(--ratio,4/5)}
+.photo figcaption{font-size:10px;font-weight:800;letter-spacing:.04em;padding:8px 7px 1px;line-height:1.25;text-transform:uppercase}
+.photo .subcap{display:block;font-size:10px;font-weight:500;letter-spacing:0;text-transform:none;color:#4d6067}
+.photo--yosemite{width:29%;left:1%;top:22px;transform:rotate(-7deg);--ratio:4/5}
+.photo--grad{width:25%;right:15%;top:16px;transform:rotate(6deg);--ratio:4/3}
+.photo--lime{width:21%;left:35%;top:212px;transform:rotate(9deg);--ratio:4/5}
+.photo--bird{width:18%;right:2%;top:312px;transform:rotate(-8deg);--ratio:4/5}
+.cover-type{position:absolute;left:7%;bottom:13px;transform:rotate(-3deg);z-index:2;font:700 clamp(22px,3.5vw,49px)/1.15 Fredoka,sans-serif;color:var(--yellow);text-shadow:3px 4px var(--blue)}
+.cover-type small{font:500 16px Caveat,cursive;color:#fff7ea;display:block;margin-top:6px}
+.cover-note{position:absolute;right:27%;top:45px;z-index:3;transform:rotate(-12deg);font:700 clamp(19px,2.8vw,32px)/1 Caveat,cursive;color:var(--yellow)}
+.cover-note::after{content:"↘";display:block;font-size:60px;margin:0 0 0 55px}
+.round-sticker{background:var(--yellow);color:var(--blue);width:133px;height:133px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:50%;font:700 17px/1.15 Fredoka,sans-serif;position:absolute;right:0;top:105px;transform:rotate(16deg);border:2px dashed var(--blue);box-shadow:0 0 0 6px var(--yellow);z-index:3}
+.cover-bottom{border-top:1px dashed #86a0a9;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0 0;font-size:12px;font-weight:700;letter-spacing:.09em}
+.cover-bottom em{font:700 27px Caveat,cursive;color:var(--yellow)}
+.ticker{background:var(--yellow);border-block:2px solid var(--ink);padding:12px 0;overflow:hidden;white-space:nowrap;text-align:center;font-weight:800;letter-spacing:.12em;font-size:12px}
+.ticker span{margin:0 20px;color:var(--red)}
+.section{padding:91px 0}.section-index{font-size:12px;letter-spacing:.18em;color:var(--red);font-weight:800;text-transform:uppercase;display:block;margin-bottom:9px}
+.section-title{font:700 clamp(49px,7vw,96px)/.98 Fredoka,sans-serif;letter-spacing:-.055em;margin:0 0 26px}
+.section-intro{font-size:17px;max-width:715px;margin:0 0 35px}
+.hand{font:700 30px/1 Caveat,cursive;color:var(--red)}
+.rule{border:0;border-top:2px solid var(--ink);margin:30px 0}
+.about-layout{display:grid;grid-template-columns:1.07fr .93fr;gap:65px;align-items:center}
+.about-layout p{max-width:600px}
+.lead{font-size:clamp(18px,2.25vw,24px);line-height:1.5;font-weight:600}
+.pill-list{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0}
+.pill-list span{font-weight:700;font-size:12px;border:1.5px solid var(--ink);border-radius:99px;padding:4px 12px;background:#fffdf4}
+.profile-board{position:relative;min-height:520px}
+.profile-a,.profile-b{position:absolute;background:#fffdf7;border:7px solid #fffdf7;box-shadow:6px 8px 0 var(--yellow);margin:0}
+.profile-a{width:58%;right:4%;top:0;transform:rotate(6deg)}
+.profile-b{width:46%;left:1%;bottom:15px;transform:rotate(-9deg)}
+.profile-a img{aspect-ratio:3/4;object-fit:cover;object-position:50% 35%}.profile-b img{aspect-ratio:3/4;object-fit:cover;object-position:center}
+.profile-a figcaption,.profile-b figcaption{padding:8px 4px 2px;font-size:10px;font-weight:800;letter-spacing:.06em}
+.profile-note{position:absolute;left:4%;top:40px;transform:rotate(-12deg);font:700 32px Caveat,cursive;color:var(--red);z-index:3}
+.bio-micro{border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:22px;margin-top:26px}
+.bio-micro strong{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase}.bio-micro p{font-size:13px;margin:7px 0}
+.research{background:#e7ede8;border-block:2px solid var(--ink)}
+.research-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.field-photo{position:relative;background:#fff;padding:11px 11px 14px;border:2px solid var(--ink);box-shadow:9px 9px 0 #95aa9d;margin:0}
+.field-photo img{height:415px;object-fit:cover;object-position:50% 48%}.field-photo figcaption{font-size:12px;margin-top:12px;font-weight:700}
+.field-photo .sticky{position:absolute;right:-24px;top:34px;transform:rotate(8deg);background:var(--yellow);padding:9px 12px;border:2px solid var(--ink);font:700 22px Caveat,cursive}
+.research-copy h3,.eng-copy h3{font:700 30px/1.05 Fredoka,sans-serif;margin:0 0 15px}.research-copy p,.eng-copy p{margin:0 0 18px}
+.fact-list{padding:0;margin:10px 0 0;list-style:none}.fact-list li{border-top:1px solid #90a59c;padding:11px 0;font-size:14px}.fact-list b{display:inline-block;min-width:100px;color:#3c6555;font-size:12px;letter-spacing:.08em}
+.micro-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.micro-pair figure{margin:0;background:#fff;padding:9px;border:1px solid var(--ink)}.micro-pair img{height:185px;object-fit:cover}.micro-pair figcaption{margin:8px 0 0;font-size:11px;font-weight:700}
+.eng-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.eng-illustration{border:3px solid var(--ink);background:#f4d967;padding:23px 22px 12px;box-shadow:10px 10px 0 var(--red);transform:rotate(-1deg)}
+.eng-illustration h3{font:700 29px Fredoka,sans-serif;margin:0 0 8px}.eng-illustration .diagram-cap{font-size:11px;font-weight:800;letter-spacing:.08em;margin-top:5px}
+.eng-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.eng-strip figure{margin:0;background:#fffdf3;border:2px solid var(--ink);padding:8px}.eng-strip img{height:190px;object-fit:cover}.eng-strip figcaption{font-size:11px;font-weight:700;padding:7px 3px 0}
+.eng-tag{display:inline-block;background:var(--blue);color:#fff;letter-spacing:.08em;font-size:11px;font-weight:800;padding:6px 10px}
+.journal{background:#efe9dc;border-block:2px solid var(--ink)}
+.journal-lead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.journal-lead p{max-width:320px;font-size:14px}
+.story-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:22px;align-items:start}
+.story{background:#fffaf0;border:2px solid var(--ink);padding:10px;box-shadow:6px 7px 0 #bbc0ae}
+.story:nth-child(2){margin-top:25px;transform:rotate(1.5deg)}.story:nth-child(3){margin-top:54px;transform:rotate(-1deg)}
+.story img{height:276px;object-fit:cover}.story:first-child img{height:326px}
+.story .inner{padding:13px 8px 10px}.story .kind{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--red)}.story h3{font:700 28px/1.03 Fredoka,sans-serif;margin:6px 0 10px}.story p{font-size:13px;margin:7px 0 12px}.story details{font-size:13px}.story summary{cursor:pointer;list-style:none;font-weight:800;letter-spacing:.04em;border-top:1px dashed #c4bdaf;padding-top:11px}.story summary::-webkit-details-marker{display:none}.story summary::after{content:' ↗';color:var(--red)}.story details[open] summary{color:var(--red)}
+.postcard-head{display:flex;align-items:center;gap:12px;margin-top:70px}.postcard-head h3{font:700 clamp(33px,4.3vw,58px)/1 Fredoka,sans-serif;margin:0}.postcard-head span{font:600 25px Caveat,cursive;color:var(--red)}
+.postcard-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:25px;align-items:start}
+.postcard{margin:0;background:#fffdf7;padding:8px 8px 13px;border:1px solid #bab4a3;box-shadow:3px 5px 0 #d1c9b9;transition:transform .2s}
+.postcard:nth-child(2n){transform:rotate(2deg)}.postcard:nth-child(3n){transform:rotate(-3deg)}.postcard:hover{transform:rotate(0deg) translateY(-5px)}
+.postcard img{height:176px;object-fit:cover}.postcard figcaption{font-size:11px;font-weight:700;line-height:1.3;margin:9px 4px 0}.postcard figcaption small{display:block;color:#7a7670;font-weight:600;margin-top:3px}
+.contact{background:var(--yellow);padding:80px 0 84px}.contact-layout{display:flex;justify-content:space-between;align-items:center;gap:38px}.contact h2{font:700 clamp(53px,9vw,112px)/1 Fredoka,sans-serif;letter-spacing:-.06em;margin:4px 0 14px}.contact p{font-size:15px;max-width:530px}.contact-actions{display:grid;gap:12px;min-width:235px}.button-link{padding:15px 20px;border:2px solid var(--ink);font-size:14px;font-weight:800;letter-spacing:.07em;background:var(--paper);display:flex;align-items:center;justify-content:space-between;box-shadow:4px 4px 0 var(--ink)}.button-link:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.smallprint{font-size:12px;font-weight:600;margin:12px 0 0}.footer{background:var(--blue);color:var(--paper);padding:24px 0;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+@media(max-width:1000px){.round-sticker{width:105px;height:105px;font-size:14px}.cutout-stage{min-height:560px}.cover-type{bottom:0}.about-layout{gap:30px}.eng-grid{gap:30px}.story-grid{gap:13px}.story h3{font-size:24px}.postcard-wall{gap:12px}.postcard img{height:150px}}
+@media(max-width:760px){html{scroll-padding-top:105px}.wrapper{width:min(100% - 30px,1180px)}.top{min-height:88px;display:block;padding:12px 0 9px}.top .logo{display:inline-block}.top nav{overflow-x:auto;padding:7px 0 3px;gap:17px;scrollbar-width:none}.top nav::-webkit-scrollbar{display:none}.nav-ed{float:right;padding-top:5px}.cover-inner{padding-top:18px}.meta{font-size:9px}.mast{margin:25px -1px 11px}.mast h1{font-size:17vw}.cover-deck{font-size:13px}.cutout-stage{min-height:720px;margin-top:35px}.photo{border-width:5px}.photo--yosemite{width:48%;top:0;left:3%}.photo--grad{width:41%;right:1%;top:55px}.photo--lime{width:33%;left:10%;top:375px}.photo--bird{width:37%;right:7%;top:402px}.cover-note{right:11%;top:8px;font-size:25px}.cover-note::after{font-size:35px;margin-left:10px}.round-sticker{right:15%;top:310px;width:100px;height:100px}.cover-type{bottom:3px;left:4%;font-size:27px}.cover-bottom{align-items:start;font-size:10px}.cover-bottom em{font-size:20px}.section{padding:62px 0}.about-layout,.research-grid,.eng-grid{grid-template-columns:1fr}.profile-board{min-height:485px;max-width:490px;margin:auto;width:100%}.bio-micro{gap:10px}.field-photo img{height:370px}.story-grid{grid-template-columns:1fr 1fr}.story:nth-child(2),.story:nth-child(3){margin-top:0;transform:none}.story:first-child{grid-column:1/-1}.story:first-child img{height:390px}.story img{height:250px}.journal-lead{display:block}.postcard-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.postcard img{height:190px}.contact-layout{display:block}.contact-actions{max-width:300px;margin-top:26px}}
+@media(max-width:480px){.mast h1{font-size:16.6vw}.cover-deck{max-width:280px}.meta .edition{padding:3px 7px}.cutout-stage{min-height:630px}.photo--grad{right:0}.photo--yosemite{width:53%}.photo--grad{width:43%}.photo--lime{left:3%;width:37%;top:340px}.photo--bird{right:2%;width:42%;top:354px}.photo figcaption{font-size:8px;padding:5px 3px 1px}.photo .subcap{font-size:8px}.round-sticker{right:16%;top:270px;width:75px;height:75px;font-size:10px}.cover-type{font-size:22px;bottom:10px}.cover-type small{font-size:13px}.cover-note{font-size:21px}.cover-bottom{display:block}.cover-bottom em{display:block;margin-top:6px}.section-title{font-size:51px}.profile-board{min-height:420px}.profile-note{font-size:25px}.bio-micro{grid-template-columns:1fr 1fr}.bio-micro div:last-child{grid-column:1/-1}.field-photo img{height:280px}.field-photo .sticky{right:-5px}.micro-pair{gap:8px}.micro-pair img{height:145px}.eng-strip img{height:140px}.story-grid{grid-template-columns:1fr}.story:first-child{grid-column:auto}.story:first-child img,.story img{height:270px}.postcard-wall{gap:10px}.postcard img{height:145px}.postcard-head{display:block}.postcard-head span{display:block;margin-top:4px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="topbar">
-  <div class="wrap topinner">
-    <a class="brand" href="#home">HANNAH! ✳</a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#about">ABOUT</a><a href="#research">RESEARCH</a><a href="#engineering">ENGINEERING</a><a href="#journal">JOURNAL</a><a href="#contact">CONTACT</a>
-    </nav>
-  </div>
+<header>
+ <div class="wrapper top">
+  <a class="logo" href="#home" aria-label="HANNAH! Home">HANNAH<span>!</span></a>
+  <span class="nav-ed">a little web magazine ✿</span>
+  <nav aria-label="Main navigation"><a href="#about">01 ABOUT</a><a href="#research">02 RESEARCH</a><a href="#engineering">03 ENGINEERING</a><a href="#journal">04 JOURNAL</a><a href="#contact">SAY HELLO ↗</a></nav>
+ </div>
 </header>
 <main id="main">
-  <section id="home" class="hero">
-    <div class="wrap">
-      <div class="issue"><span>PERSONAL WEB MAGAZINE · ISSUE 002</span><span>CALIFORNIA · UCSD · MSE</span></div>
-      <h1 class="masthead">HANNAH!</h1>
-      <p class="strap">Materials, Machines & Mountains. And everything in between.</p>
-      <div class="hero-board">
-        <a class="cutout c1" href="#journal"><img src="images/yosemite-valley.jpg" alt="Hannah sitting in Yosemite Valley" /><b>THE GREAT OUTDOORS ↗</b><span>Yosemite, mountains & little adventures</span></a>
-        <a class="cutout c2" href="#about"><img src="images/graduation-collage.jpg" alt="Hannah's graduation collage at UC San Diego" /><b>MEET HANNAH ↗</b><span>UC San Diego, growth & milestones</span></a>
-        <a class="cutout c3" href="#research"><img src="images/lab-selfie.jpg" alt="Hannah in a research lab with a laptop" /><b>LAB LIFE ↗</b><span>Research, prototypes & curiosity</span></a>
-        <div class="scribble">Always curious! ↗</div>
-      </div>
-      <div class="hero-bottom">
-        <p>An engineer by profession, a curious mind by nature. This is a scrapbook of things I build, places I go, and ideas I can't stop thinking about.</p>
-        <span class="stamp">WELCOME TO MY CORNER OF THE INTERNET ☆</span>
-      </div>
+ <section id="home" class="cover" aria-labelledby="cover-title">
+  <div class="wrapper cover-inner">
+   <div class="meta"><span>THE PERSONAL WEB MAGAZINE</span><span class="edition">ISSUE 003 / 2026</span><span>CALIFORNIA, USA</span></div>
+   <div class="mast"><h1 id="cover-title">HANNAH!</h1></div>
+   <p class="cover-deck">An engineer's guide to <strong>everything else.</strong><br>Materials, machines, mountains, and the little things.</p>
+   <div class="cutout-stage" aria-label="The cover: a scrapbook of Hannah's adventures and everyday moments">
+    <figure class="photo photo--yosemite"><img src="images/cover-yosemite.webp" alt="Hannah sitting above Yosemite Valley at golden hour" fetchpriority="high"><figcaption>WEEKEND EXPLORER <span class="subcap">A mountain is always a good idea.</span></figcaption></figure>
+    <figure class="photo photo--grad"><img src="images/cover-graduation.webp" alt="Hannah in graduation robes at UC San Diego" fetchpriority="high"><figcaption>A NEW CHAPTER <span class="subcap">UC San Diego · 2026</span></figcaption></figure>
+    <figure class="photo photo--lime"><img src="images/cover-lime.webp" alt="A small green citrus fruit held against the sunny UCSD campus" loading="lazy"><figcaption>SMALL DISCOVERIES <span class="subcap">Found on a sunny walk.</span></figcaption></figure>
+    <figure class="photo photo--bird"><img src="images/cover-seagull.webp" alt="A seagull standing on a coastal warning sign above the ocean" loading="lazy"><figcaption>LOCAL RESIDENT <span class="subcap">Rules? Not for this bird.</span></figcaption></figure>
+    <div class="cover-note" aria-hidden="true">This way to the good stuff</div>
+    <div class="round-sticker" aria-hidden="true">4 PARTS<br>1 CURIOUS<br>PERSON ★</div>
+    <div class="cover-type">山と海と、ものづくり。<small>notes from a curious mind ↗</small></div>
+   </div>
+   <div class="cover-bottom"><span>FIELD NOTES FROM LABS, TRAILS & EVERYDAY LIFE</span><em>Very much a work in progress! ↗</em></div>
+  </div>
+ </section>
+ <div class="ticker" aria-hidden="true">MAKE THINGS <span>✳</span> ASK QUESTIONS <span>✳</span> GO OUTSIDE <span>✳</span> KEEP LEARNING <span>✳</span> MAKE THINGS <span>✳</span> ASK QUESTIONS</div>
+ <section id="about" class="section" aria-labelledby="about-title">
+  <div class="wrapper about-layout">
+   <div>
+    <span class="section-index">01 / INTRODUCING...</span>
+    <h2 id="about-title" class="section-title">Oh, hello!<br>I'm Hannah.</h2>
+    <p class="lead">A materials science graduate finding her way through engineering — while collecting a lot of stories along the way.</p>
+    <p>My path started with a love of design, led me into materials research at UC San Diego, and eventually brought me to thermal management and liquid cooling technology. I like figuring out how things work, whether it's a tiny sensor, a piece of hardware, or something completely unexpected.</p>
+    <p>When I'm away from my desk, you'll probably find me on a trail, near the ocean, playing tennis, or taking photos of things that caught my eye.</p>
+    <div class="pill-list"><span>M.S. @ UC San Diego</span><span>Materials Science</span><span>Thermal Engineering</span><span>Hiking</span><span>Tennis</span><span>Ocean Days</span></div>
+    <div class="bio-micro"><div><strong>Currently into</strong><p>Engineering drawings, fluid & thermal systems.</p></div><div><strong>Weekend plans</strong><p>Somewhere outdoors, preferably with a view.</p></div><div><strong>Always carrying</strong><p>A camera and too many questions.</p></div></div>
+   </div>
+   <div class="profile-board" aria-label="Personal photo scrapbook">
+    <span class="profile-note" aria-hidden="true">Meet the human! ↘</span>
+    <figure class="profile-a"><img src="images/about-tennis.webp" alt="Hannah on a tennis court with a racket" loading="lazy"><figcaption>AFTER CLASS / COURT TIME</figcaption></figure>
+    <figure class="profile-b"><img src="images/about-beach.webp" alt="Hannah relaxing beneath a striped beach umbrella" loading="lazy"><figcaption>OUT OF OFFICE, MAYBE?</figcaption></figure>
+   </div>
+  </div>
+ </section>
+ <section id="research" class="section research" aria-labelledby="research-title">
+  <div class="wrapper">
+   <span class="section-index">02 / SCIENCE CLUB</span><h2 id="research-title" class="section-title">From the lab.</h2>
+   <p class="section-intro">Science, trial and error, a lot of questions — and the joy of finally understanding something new.</p>
+   <div class="research-grid">
+    <div>
+     <figure class="field-photo"><img src="images/research-lab.webp" alt="Hannah working with her laptop in an engineering research laboratory" loading="lazy"><span class="sticky">lab day! ✳</span><figcaption>FIELD REPORT No. 01 — THE WORKSPACE</figcaption></figure>
+     <div class="micro-pair">
+      <figure><img src="images/research-map.webp" alt="A colorful interdisciplinary research diagram on a university wall" loading="lazy"><figcaption>Where disciplines meet ↗</figcaption></figure>
+      <figure><img src="images/research-campus.webp" alt="UC San Diego Jacobs School of Engineering building" loading="lazy"><figcaption>The place where I learned ↗</figcaption></figure>
+     </div>
     </div>
-  </section>
-
-  <div class="stripe" aria-hidden="true"></div>
-
-  <section id="about" class="section">
-    <div class="wrap intro">
-      <div>
-        <span class="eyebrow">01 / THE PERSON BEHIND THE PAGES</span>
-        <h2 class="section-title">Hello there,<br>I'm Hannah.</h2>
-        <p class="lead">I studied materials science at UC San Diego, explored flexible sensors in the lab, and found my way into the world of thermal engineering.</p>
-        <p>Outside of work, I love hiking, ocean days, campus corners, and wandering into new interests. I made this website to keep a record of both the serious and the silly.</p>
-        <div class="chips"><span class="chip">UC San Diego</span><span class="chip">Materials Science</span><span class="chip">Thermal Engineering</span><span class="chip">Weekend Hiker</span><span class="chip">Tennis & Surf</span></div>
-      </div>
-      <div class="about-card">
-        <div class="polaroid"><img src="images/tennis-selfie.jpg" alt="Hannah with a tennis racket" /><small>ON CAMPUS / TENNIS EVENING</small></div>
-        <aside class="note"><h3>HANNAH'S LITTLE LIST ✿</h3><p>Currently learning: mechanical drawings & liquid cooling</p><p>Forever fascinated by: why things work</p><p>Favorite kind of weekend: somewhere with a mountain view</p><p>Usually carrying: too many questions</p></aside>
-      </div>
+    <div class="research-copy">
+     <span class="eng-tag">MATERIALS SCIENCE & ENGINEERING</span>
+     <h3 style="margin-top:17px">Flexible electronics & sensing.</h3>
+     <p>During my master's studies at UC San Diego, I worked on flexible strain-sensing devices using carbon-nanotube-based materials, looking at how structure and deformation influence electrical response.</p>
+     <p>My favorite part of research? Moving between making samples, testing them, and figuring out what the data is trying to say.</p>
+     <ul class="fact-list">
+      <li><b>FOCUS</b> Flexible sensors & nanocomposites</li>
+      <li><b>TOOLS</b> Fabrication, mechanical & electrical tests</li>
+      <li><b>INTEREST</b> Structure–property relationships</li>
+      <li><b>ALSO</b> Functional materials & manufacturing</li>
+     </ul>
+     <p class="hand" style="margin-top:27px">Make it. Test it. Learn. Repeat.</p>
     </div>
-  </section>
-
-  <section id="research" class="section panel">
-    <div class="wrap">
-      <span class="eyebrow">02 / LAB NOTEBOOK</span>
-      <h2 class="section-title">Research & Ideas.</h2>
-      <div class="grid">
-        <article class="feature"><img src="images/lab-selfie.jpg" alt="Hannah working in a lab"/><div class="feature-content"><small>RESEARCH / LAB LIFE</small><h3>Flexible Sensors</h3><p>Research in flexible devices, experiments, and the process of learning how tiny structures respond to movement.</p><span class="read">PROJECT OVERVIEW →</span></div></article>
-        <article class="feature"><img src="images/sme-poster.jpg" alt="Poster map of engineering departments"/><div class="feature-content"><small>RESEARCH / ENGINEERING COMMUNITY</small><h3>Where Ideas Meet</h3><p>Spaces, labs, and the broader ecosystem of engineering and materials science that shaped my research path.</p><span class="read">PROJECT OVERVIEW →</span></div></article>
-        <article class="feature"><img src="images/ucsd-campus-collage.jpg" alt="UC San Diego engineering campus collage"/><div class="feature-content"><small>NOTEBOOK / UCSD</small><h3>Campus Notes</h3><p>Snapshots from the places where I studied, thought, and slowly built confidence as an engineer.</p><span class="read">MORE COMING SOON →</span></div></article>
-      </div>
-      <p class="placeholder-note">Project cards are previews; detailed project pages can be added next.</p>
+   </div>
+  </div>
+ </section>
+ <section id="engineering" class="section" aria-labelledby="engineering-title">
+  <div class="wrapper">
+   <span class="section-index">03 / HOW DOES THAT WORK?</span><h2 id="engineering-title" class="section-title">Inside the machine.</h2>
+   <div class="eng-grid">
+    <div class="eng-copy">
+     <h3>From tiny materials to big cooling challenges.</h3>
+     <p>These days I'm learning about thermal management for computing hardware: cold plates, liquid cooling, manufacturing processes, and how engineering drawings turn ideas into things you can actually build.</p>
+     <p>I like to approach each design from four sides: <strong>thermal & fluid performance, materials & manufacturing, mechanical detail, and testing & reliability.</strong></p>
+     <span class="eng-tag">LEARNING LOG / IN PROGRESS</span>
+     <div class="eng-strip">
+      <figure><img src="images/industry-visit.webp" alt="Hannah visiting an office lobby with NVIDIA signage" loading="lazy"><figcaption>Industry notes / a visit</figcaption></figure>
+      <figure><img src="images/engineering-building.webp" alt="A university engineering building with a large FAH sign" loading="lazy"><figcaption>Engineering starts with curiosity</figcaption></figure>
+     </div>
+     <p style="font-size:12px;margin-top:13px;color:#5a6165">Public-learning sketches only; no confidential customer designs or project data.</p>
     </div>
-  </section>
-
-  <section id="engineering" class="section">
-    <div class="wrap">
-      <span class="eyebrow">03 / INSIDE THE MACHINE</span>
-      <h2 class="section-title">Engineering, Explained.</h2>
-      <div class="grid">
-        <article class="feature"><img src="images/nvidia-lobby.jpg" alt="Hannah at NVIDIA lobby"/><div class="feature-content"><small>THERMAL / INDUSTRY</small><h3>From School to Industry</h3><p>Moving from materials research into thermal engineering and learning how engineering problems show up in the real world.</p><span class="read">TECHNICAL NOTES →</span></div></article>
-        <article class="feature"><img src="images/sme-poster.jpg" alt="Engineering systems poster"/><div class="feature-content"><small>MECHANICAL / LEARNING</small><h3>How I Study Drawings</h3><p>Breaking down structures through function, materials, mechanical details, and test requirements.</p><span class="read">TECHNICAL NOTES →</span></div></article>
-        <article class="feature"><img src="images/lab-selfie.jpg" alt="Research workspace"/><div class="feature-content"><small>LEARNING JOURNAL</small><h3>Curiosity in Progress</h3><p>Notes from the messy, rewarding process of learning engineering, one drawing and one question at a time.</p><span class="read">MORE COMING SOON →</span></div></article>
-      </div>
-      <p class="placeholder-note">Only public or independently created technical materials should be shared here.</p>
+    <div class="eng-illustration">
+     <h3>A little cold-plate anatomy ↗</h3>
+     <svg viewBox="0 0 590 410" width="100%" role="img" aria-label="Simplified conceptual cutaway of a liquid-cooled cold plate, showing inlet, outlet, parallel flow channels, copper base, and heat source" xmlns="http://www.w3.org/2000/svg">
+       <rect x="65" y="95" width="430" height="230" rx="16" fill="#db8e5b" stroke="#183340" stroke-width="7"/>
+       <rect x="85" y="115" width="390" height="188" rx="11" fill="#b9dddb" stroke="#183340" stroke-width="4"/>
+       <g fill="none" stroke="#28799b" stroke-width="8" stroke-linecap="round">
+         <path d="M120 148 H440 M120 173 H440 M120 198 H440 M120 223 H440 M120 248 H440 M120 273 H440"/>
+       </g>
+       <g fill="none" stroke="#f8f2ce" stroke-width="7" stroke-linecap="round">
+         <path d="M150 153 h48 m-8 -6 9 6 -9 6 M270 203 h48 m-8 -6 9 6 -9 6 M352 254 h48 m-8 -6 9 6 -9 6"/>
+       </g>
+       <rect x="27" y="148" width="67" height="46" rx="12" fill="#7bbdbd" stroke="#183340" stroke-width="6"/>
+       <rect x="467" y="231" width="75" height="46" rx="12" fill="#7bbdbd" stroke="#183340" stroke-width="6"/>
+       <path d="M65 333 l37 21 h386 l30 -21" fill="none" stroke="#b76f3f" stroke-width="20" stroke-linejoin="round"/>
+       <rect x="210" y="350" width="180" height="28" rx="5" fill="#d9674b" stroke="#183340" stroke-width="4"/>
+       <g fill="#173541" font-size="16" font-weight="700" font-family="DM Sans, sans-serif">
+         <text x="14" y="139">INLET</text><text x="460" y="219">OUTLET</text><text x="224" y="400">HEAT SOURCE</text><text x="185" y="86">FLOW CHANNELS</text>
+       </g>
+       <path d="M280 89 V112 M280 385 V378" stroke="#183340" stroke-width="2.5" fill="none"/>
+     </svg>
+     <p class="diagram-cap">CONCEPT SKETCH — NOT A PRODUCT DRAWING · NOT TO SCALE</p>
+     <p style="font:700 25px Caveat,cursive;margin:12px 0 4px">Why do tiny channels matter? →</p>
     </div>
-  </section>
-
-  <section id="journal" class="section panel">
-    <div class="wrap">
-      <span class="eyebrow">04 / AFTER HOURS</span>
-      <h2 class="section-title">The Life Journal.</h2>
-      <div class="journal-grid">
-        <article class="journal-card"><img src="images/yosemite-valley.jpg" alt="Hannah in Yosemite Valley"/><span class="tag">TRAVEL / OUTDOORS</span><h3>Mountains, Mile by Mile</h3><p>Trails, granite views, lakes, and all the little moments that make the climb worth it.</p><span class="read">STORY COMING SOON →</span></article>
-        <article class="journal-card"><img src="images/surfboard.jpg" alt="Hannah by the ocean with a surfboard"/><span class="tag">LIFE / CALIFORNIA</span><h3>Ocean Days & San Diego Light</h3><p>Sea breeze, surfboards, and the version of California that still feels like home.</p><span class="read">STORY COMING SOON →</span></article>
-      </div>
-      <div class="gallery-strip" aria-label="Life gallery">
-        <img src="images/mountain-lake.jpg" alt="Hannah by a mountain lake" />
-        <img src="images/beach-umbrella.jpg" alt="Hannah under a striped beach umbrella" />
-        <img src="images/graduation-collage.jpg" alt="Graduation collage" />
-        <img src="images/ucsd-campus-collage.jpg" alt="UC San Diego campus collage" />
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <div>
-        <span class="eyebrow">05 / SAY HELLO</span>
-        <h2>Let's talk!</h2>
-        <p>Have a question, a good book recommendation, or a favorite trail? I'd love to hear from you.</p>
-      </div>
-      <div class="links">
-        <a href="https://github.com/Baohanhe" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
-        <a href="mailto:hello@example.com">EMAIL ↗</a>
-      </div>
-    </div>
-  </section>
+   </div>
+  </div>
+ </section>
+ <section id="journal" class="section journal" aria-labelledby="journal-title">
+  <div class="wrapper">
+   <span class="section-index">04 / ON MY DAYS OFF</span>
+   <div class="journal-lead"><h2 id="journal-title" class="section-title" style="margin-bottom:0">Outside the lab.</h2><p>A collection of little adventures, sea breezes, very long walks, and moments worth keeping.</p></div>
+   <div class="story-grid">
+    <article class="story">
+     <img src="images/journal-la-jolla.webp" alt="Hannah with a camera looking over the La Jolla coastline" loading="lazy">
+     <div class="inner"><span class="kind">NO. 01 / SAN DIEGO DIARY</span><h3>Somewhere by the sea.</h3><p>California light, a familiar coastline, and a camera that always seems to come along.</p><details><summary>READ A LITTLE NOTE</summary><p>San Diego was more than a place to study. I remember the walkable campus corners, the salt in the air, and the feeling of being able to head toward the ocean whenever I needed a change of scenery. These photographs are my way of keeping a piece of that life close.</p></details></div>
+    </article>
+    <article class="story">
+     <img src="images/journal-mountains.webp" alt="A clear alpine lake, pine trees, and jagged snow-streaked mountains" loading="lazy">
+     <div class="inner"><span class="kind">NO. 02 / TRAIL NOTES</span><h3>The long way up.</h3><p>Granite, switchbacks, cold lakes — and the reward of looking back.</p><details><summary>READ A LITTLE NOTE</summary><p>Sometimes I choose the difficult trail for the view. Sometimes I stay for the small things I notice along the way: an unexpected patch of snow, a quiet lake, or sunlight falling across the mountains. This is my growing collection of days outdoors.</p></details></div>
+    </article>
+    <article class="story">
+     <img src="images/journal-ocean.webp" alt="A snorkeler at the waterline above a school of fish" loading="lazy">
+     <div class="inner"><span class="kind">NO. 03 / BLUE HOURS</span><h3>Below the surface.</h3><p>One of my favorite ways to see the world from a different angle.</p><details><summary>READ A LITTLE NOTE</summary><p>The ocean is a reminder that curiosity doesn't have to stay in a classroom. There is an entire world to discover when you look below the surface — and sometimes the best story is simply the one you get to witness.</p></details></div>
+    </article>
+   </div>
+   <div class="postcard-head"><h3>Little postcards.</h3><span>tiny moments, big feelings ↗</span></div>
+   <div class="postcard-wall" aria-label="Personal photo postcards">
+     <figure class="postcard"><img src="images/postcard-sunset.webp" alt="The Scripps Pier and sunset over the Pacific" loading="lazy"><figcaption>Last light over the pier.<small>01 / ocean</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-surf.webp" alt="Hannah standing beside a pale-blue surfboard" loading="lazy"><figcaption>Saltwater state of mind.<small>02 / beach day</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-bloom.webp" alt="White blossoms on trees arching over a sunny campus walkway" loading="lazy"><figcaption>Spring, right on time.<small>03 / campus</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-pier.webp" alt="Scripps Pier underneath long white clouds in a bright blue sky" loading="lazy"><figcaption>Look up once in a while.<small>04 / sky</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-lake.webp" alt="Hannah sitting above a turquoise mountain lake" loading="lazy"><figcaption>Lake-side pause.<small>05 / mountains</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-court.webp" alt="Outdoor basketball court during golden hour" loading="lazy"><figcaption>Evenings on campus.<small>06 / everyday</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-triton.webp" alt="Sunlit entrance to a university student-services building" loading="lazy"><figcaption>Warm concrete & shadows.<small>07 / architecture</small></figcaption></figure>
+     <figure class="postcard"><img src="images/postcard-campus.webp" alt="UC San Diego engineering school courtyard on a blue-sky day" loading="lazy"><figcaption>One last campus walk.<small>08 / UCSD</small></figcaption></figure>
+   </div>
+  </div>
+ </section>
+ <section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="wrapper contact-layout">
+   <div><span class="section-index" style="color:#7d382b">05 / UNTIL NEXT TIME</span><h2 id="contact-title">Let's talk!</h2><p>Working on something interesting? Have an engineering question, a good reading recommendation, or a trail I shouldn't miss? Say hello.</p><p class="hand" style="color:var(--blue);margin:22px 0 0">Thanks for stopping by! ♡</p></div>
+   <div class="contact-actions"><a class="button-link" href="https://github.com/Baohanhe" target="_blank" rel="noopener noreferrer">FIND ME ON GITHUB <span>↗</span></a><a class="button-link" href="https://github.com/Baohanhe/hannaheee" target="_blank" rel="noopener noreferrer">VIEW THIS WEBSITE'S CODE <span>↗</span></a><p class="smallprint">LinkedIn and email can be added here once you choose the public contact details.</p></div>
+  </div>
+ </section>
 </main>
-<footer><div class="wrap"><span>© <span id="year">2026</span> Hannah He. Made with curiosity.</span><span>FROM CALIFORNIA, WITH LOVE ♥</span></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<footer class="footer"><div class="wrapper footer-inner"><span>© <span id="copyright-year">2026</span> Hannah He · A little online scrapbook.</span><span>MADE WITH CURIOSITY IN CALIFORNIA ✳</span><span>VOL. 003 — THE PHOTO ISSUE</span></div></footer>
+<script>document.getElementById('copyright-year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
