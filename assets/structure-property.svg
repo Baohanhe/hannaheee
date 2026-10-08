@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 670" role="img" aria-labelledby="t d">
+<title id="t">Structure–processing–properties–performance framework</title><desc id="d">Original conceptual diagram linking four central themes in materials science with characterization at the center.</desc>
+<rect width="1100" height="670" fill="#f7f8f5"/>
+<g stroke="#2e745e" stroke-width="9" stroke-linecap="round" fill="none" opacity=".82"><path d="M300 410 L550 115 L825 393 L680 560 Z"/><path d="M300 410 L825 393"/><path d="M550 115 L680 560"/></g>
+<g font-family="Arial,Helvetica,sans-serif" font-weight="700">
+<g><circle cx="550" cy="115" r="70" fill="#2e8390"/><circle cx="529" cy="90" r="23" fill="#b9f4e8" opacity=".35"/><text x="650" y="108" font-size="40" fill="#075369">STRUCTURE</text></g>
+<g><circle cx="300" cy="410" r="71" fill="#225363"/><circle cx="282" cy="380" r="27" fill="#a6e8dc" opacity=".25"/><text x="75" y="526" font-size="39" fill="#075369">PROCESSING</text></g>
+<g><circle cx="825" cy="393" r="66" fill="#358397"/><circle cx="808" cy="372" r="20" fill="#c1ebed" opacity=".30"/><text x="905" y="392" font-size="38" fill="#075369">PROPERTIES</text></g>
+<g><circle cx="680" cy="560" r="78" fill="#2d7c8d"/><circle cx="653" cy="533" r="26" fill="#b5efe1" opacity=".29"/><text x="775" y="578" font-size="39" fill="#075369">PERFORMANCE</text></g>
+<g><circle cx="573" cy="331" r="53" fill="#c8486e"/><circle cx="556" cy="307" r="16" fill="#ffe5e8" opacity=".38"/><path d="M522 331L275 205" stroke="#e65c85" stroke-width="5"/><text x="50" y="190" font-size="34" fill="#c33162">CHARACTERIZATION</text></g>
+</g>
+<text x="40" y="642" font-family="Arial" font-size="18" fill="#4c5b56">CONCEPTUAL FRAMEWORK · ORIGINAL REDRAWING · NOT EXPERIMENTAL DATA</text>
+</svg>
