@@ -1,48 +1,40 @@
-HANNAH! V4 — PERSONAL WEB MAGAZINE
-=================================
+HANNAH! ISSUE 006 — BILINGUAL EDITORIAL REVISION
+================================================
 
-1) WHAT IS INCLUDED
-index.html        — Complete responsive, interactive personal website
-images/           — Your personal photos, optimized for the web
-assets/           — Two original vector diagrams, not third-party journal figures
+WHAT TO DO
+1. Unzip this package.
+2. To preview on Mac, open index.html in Safari or Chrome.
+3. To publish, upload the files INSIDE this folder to the ROOT of the existing GitHub repository:
+   https://github.com/Baohanhe/hannaheee
+4. Commit changes. Allow GitHub Pages to deploy and reload with ?v=6.
+5. The site URL is https://baohanhe.github.io/hannaheee/?v=6
 
-2) HOW TO DEPLOY TO YOUR EXISTING REPOSITORY
-Repository: https://github.com/Baohanhe/hannaheee
+Do not upload the ZIP itself. The images/ and assets/ folders must be alongside index.html.
 
-On the repository's Code tab choose Add file > Upload files.
-Drag index.html, images/, assets/ into the upload area.
-On macOS, dragging the TWO folders and the HTML file together should preserve their paths.
-IMPORTANT: The resulting root layout must be:
-  index.html
-  images/cover-yosemite.webp  (and the other photos)
-  assets/structure-property.svg
-  assets/cold-plate.svg
+WHAT CHANGED
+* Original V4 layout system and chapter overlay navigation retained.
+* Cover blue sampled from the supplied editorial reference and applied as #003D60.
+* Yellow masthead #F8DB2C. English default, full text switch to Chinese.
+* Cover returns to four ORIGINAL subjects: Yosemite portrait, campus lime, graduation, sea gull.
+* Low-angle umbrella portrait removed entirely.
+* All image source paths are unique; also manually audited for near-duplicate subjects.
+* Research: captions distinguish visual references from documented research outcomes.
+* Engineering: general educational cold-plate GIF, no confidential project info.
 
-If the GitHub website will not replace an existing index.html through uploads,
-open index.html in GitHub, click the pencil icon, replace its content,
-then Commit changes. Upload images/ and assets/ separately.
+IMAGE RIGHTS / FACT CHECK
+Images are included because they were supplied during this conversation. Some are stock/reference images,
+not necessarily owned by the site author. Before posting publicly, verify copyright and permission for:
+- Data center corridor photo (chapter-engineering.webp)
+- Motion-capture reference photo (research-motion.webp)
+- Campus architecture exterior (engineering-building.webp)
+The user's original photos may be published at their discretion. Copyright in other photographs must be respected.
+Check paper metadata and skill claims before professional publication.
+The original cold plate animation contains Chinese annotations embedded into the GIF. Its website caption translates.
 
-Do not upload the ZIP itself. Do not place files within HANNAH-v4/ folder in GitHub.
-
-Verify Settings > Pages > Deploy from a branch > main > /(root) .
-Visit https://baohanhe.github.io/hannaheee/?v=4 after deployment.
-
-3) HOW TO USE THE SITE
-- Click ABOUT / RESEARCH / ENGINEERING / JOURNAL / FULL CV to open an overlay chapter.
-- CLOSE, Esc, clicking outside the chapter, and browser Back close panels.
-- Expand the small Journal stories in-place through their READ THE SHORT NOTE controls.
-- You can share direct links like: https://baohanhe.github.io/hannaheee/#research
-
-4) WHAT TO VERIFY / CUSTOMIZE
-- CV was transcribed from the resume you provided, consolidating repeated versions.
-- UCSD dates now end June 2026 according to your completed degree.
-- Please verify exact publication citations, degree name, dates, reported satisfaction statistic,
-  instrumentation experience, and whether all role details should be publicly displayed.
-- GitHub is the only contact link configured. Add your public LinkedIn URL or email if desired.
-- Personal Journal short notes are editorial drafts, not literal trip diary transcripts.
-- This is your independently styled personal magazine; it does not include third-party magazine logos or copyrighted cover artworks.
-- Do NOT publish confidential client drawings, customer project data, or private lab materials.
-
-5) EDITING
-Content, links, and colors are all in index.html. Photos are separate files in images/.
-Fonts use Google Fonts and will fall back to local fonts if blocked.
+EDITORIAL GOALS
+Cover: show the intersection of technical curiosity and life outside work.
+About: explain the transition from materials into engineering without exaggeration.
+Research: show specific work methods, three appointments, and three publications.
+Engineering: demonstrate a reproducible four-angle approach to understanding cooling hardware.
+Journal: separate outdoors, ocean, and personal photography; no copy-and-paste generic captions.
+CV: complete education, research, skills, publications, and service history.
